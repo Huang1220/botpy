@@ -177,9 +177,9 @@ class Intents(BaseFlags):
     def guild_messages(self):
         """:class:`bool`: 是否打开消息事件的监听.
 
-        - :func:`message_create(self,message:Message)`:
+        - :func:`on_message_create(self,message:Message)`:
             发送消息事件，代表频道内的全部消息，而不只是 at 机器人的消息。内容与 AT_MESSAGE_CREATE 相同
-        - :func:`message_delete(self,message:Message)`: 删除（撤回）消息事件
+        - :func:`on_message_delete(self,message:Message)`: 删除（撤回）消息事件
 
         注意：仅 *私域* 机器人能够设置此 intents
         """
@@ -199,8 +199,8 @@ class Intents(BaseFlags):
     def direct_message(self):
         """:class:`bool`: 是否打开私信事件的监听.
 
-        - :func:`direct_message_create`: 当收到用户发给机器人的私信消息时
-        - :func:`direct_message_delete `: 删除（撤回）消息事件
+        - :func:`on_direct_message_create`: 当收到用户发给机器人的私信消息时
+        - :func:`on_direct_message_delete `: 删除（撤回）消息事件
 
         """
         return 1 << 12
